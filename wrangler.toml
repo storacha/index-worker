@@ -1,0 +1,31 @@
+name = "index-worker"
+main = "./dist/worker.mjs"
+compatibility_flags = [ "nodejs_compat_v2" ]
+compatibility_date = "2024-12-13"
+r2_buckets = [{ binding = "BUCKET", bucket_name = "dagcargo-dev" }]
+
+[build]
+command = "npm run build"
+
+[vars]
+DEBUG = "true"
+
+# PROD!
+[env.dagcargo-production]
+account_id = "fffa4b4363a7e5250af8357087263b3a"
+r2_buckets = [{ binding = "BUCKET", bucket_name = "dagcargo" }]
+
+[env.dagcargo-production.vars]
+DEBUG = "false"
+
+[env.carpark-production]
+account_id = "fffa4b4363a7e5250af8357087263b3a"
+r2_buckets = [{ binding = "BUCKET", bucket_name = "carpark-prod-0" }]
+
+[env.carpark-production.vars]
+DEBUG = "false"
+
+# STAGING!
+[env.dagcargo-staging]
+account_id = "fffa4b4363a7e5250af8357087263b3a"
+r2_buckets = [{ binding = "BUCKET", bucket_name = "dagcargo-staging" }]

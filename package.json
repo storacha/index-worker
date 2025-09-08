@@ -1,0 +1,22 @@
+{
+  "name": "index-worker",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild index.js --bundle --format=esm --platform=node --outfile=dist/worker.mjs"
+  },
+  "author": "Alan Shaw",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241205.0",
+    "esbuild": "^0.24.0",
+    "wrangler": "^3.95.0"
+  },
+  "dependencies": {
+    "@ipld/dag-json": "^10.2.3",
+    "carstream": "^2.3.0",
+    "multiformats": "^13.3.1"
+  }
+}

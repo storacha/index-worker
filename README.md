@@ -1,4 +1,4 @@
-# index-worder
+# index-worker
 
 Index worker is a cloudflare worker that generates an index for a CAR file.
 

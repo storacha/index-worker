@@ -10,11 +10,14 @@ Index a key in the bucket.
 
 Returns newline delimited dag-json. e.g.
 
-```json
+```js
+// [multihash, [offset, length]]
 [{"/":{"bytes":"EiANNuDDCZUo8wPAjW9/pSog/UoPdP6RllJIloT4PCHxaA"}},[98,1048576]]
 [{"/":{"bytes":"EiBgL8yuPQqboDoblfIsgDeJCvDsKKLX7SrdUSnk1QboGQ"}},[1048713,79616]]
 [{"/":{"bytes":"EiBhK/1XBIQzPT6Cd7CYvKokGp0hRrXcVU7CV0LRxswWDQ"}},[1128367,108]]
 ```
+
+Note: supports `?offset=` querystring parameter. This allows indexing of HUGE DAGs. Use `stat` call (below) to get full size of the file. Next, track the last received offset if the response ends before the offset reaches the end of the file you need to make an additional request with the `?offset=` parameter.
 
 ### `GET /stat/{key}`
 

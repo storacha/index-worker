@@ -29,3 +29,7 @@ DEBUG = "false"
 [env.dagcargo-staging]
 account_id = "fffa4b4363a7e5250af8357087263b3a"
 r2_buckets = [{ binding = "BUCKET", bucket_name = "dagcargo-staging" }]
+
+[env.carpark-staging]
+account_id = "fffa4b4363a7e5250af8357087263b3a"
+r2_buckets = [{ binding = "BUCKET", bucket_name = "carpark-staging-0" }]
